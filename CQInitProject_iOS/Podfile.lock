@@ -1,0 +1,129 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - CQDemoKit (0.8.0):
+    - CQDemoKit/Auxiliary (= 0.8.0)
+    - CQDemoKit/BaseUIKit (= 0.8.0)
+    - CQDemoKit/BaseUtil (= 0.8.0)
+    - CQDemoKit/BaseVC (= 0.8.0)
+    - CQDemoKit/Demo_DataSourceAndDelegate (= 0.8.0)
+    - CQDemoKit/Demo_Resource (= 0.8.0)
+    - CQDemoKit/Demo_RipeView (= 0.8.0)
+    - CQDemoKit/Helper (= 0.8.0)
+    - CQDemoKit/Monitor (= 0.8.0)
+  - CQDemoKit-Swift (0.0.1):
+    - CQDemoKit
+    - CQDemoKit-Swift/CQDemoKit-OC (= 0.0.1)
+    - CQDemoKit-Swift/SwiftUI (= 0.0.1)
+  - CQDemoKit-Swift/CQDemoKit-OC (0.0.1):
+    - CQDemoKit
+  - CQDemoKit-Swift/SwiftUI (0.0.1):
+    - CQDemoKit
+  - CQDemoKit/Auxiliary (0.8.0):
+    - Masonry
+  - CQDemoKit/BaseUIKit (0.8.0):
+    - Masonry
+  - CQDemoKit/BaseUtil (0.8.0)
+  - CQDemoKit/BaseVC (0.8.0):
+    - CQDemoKit/BaseVC/Base (= 0.8.0)
+    - CQDemoKit/BaseVC/Collection (= 0.8.0)
+    - CQDemoKit/BaseVC/ScrollView (= 0.8.0)
+    - CQDemoKit/BaseVC/TabBar (= 0.8.0)
+    - CQDemoKit/BaseVC/TableView (= 0.8.0)
+    - CQDemoKit/BaseVC/TextView (= 0.8.0)
+  - CQDemoKit/BaseVC/Base (0.8.0):
+    - CQDemoKit/BaseUIKit
+    - Masonry
+  - CQDemoKit/BaseVC/Collection (0.8.0):
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/ScrollView (0.8.0):
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TabBar (0.8.0):
+    - CQDemoKit/Helper
+  - CQDemoKit/BaseVC/TableView (0.8.0):
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TextView (0.8.0):
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/Demo_DataSourceAndDelegate (0.8.0):
+    - CQDemoKit/BaseVC
+    - CQDemoKit/Demo_Resource
+  - CQDemoKit/Demo_Resource (0.8.0):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/Helper
+  - CQDemoKit/Demo_RipeView (0.8.0):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/Demo_DataSourceAndDelegate
+    - CQDemoKit/Demo_Resource
+  - CQDemoKit/Helper (0.8.0)
+  - CQDemoKit/Monitor (0.8.0)
+  - FBRetainCycleDetector (0.1.4)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+
+DEPENDENCIES:
+  - AFNetworking (from `https://gitee.com/Leonesir/afnetworking-dh.git`, branch `master`)
+  - CQDemoKit-Swift (~> 0.0.1)
+  - CQDemoKit/BaseVC (~> 0.8.0)
+  - CQDemoKit/Demo_Resource (~> 0.8.0)
+  - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `4a7c5f3e53cdea77c5dcb8578c2ee5acacdf6781`)
+  - MLeaksFinder
+  - SVProgressHUD (~> 2.3.1)
+
+SPEC REPOS:
+  trunk:
+    - CQDemoKit
+    - CQDemoKit-Swift
+    - FBRetainCycleDetector
+    - Masonry
+    - MLeaksFinder
+    - SVProgressHUD
+
+EXTERNAL SOURCES:
+  AFNetworking:
+    :branch: master
+    :git: https://gitee.com/Leonesir/afnetworking-dh.git
+  MBProgressHUD:
+    :commit: 4a7c5f3e53cdea77c5dcb8578c2ee5acacdf6781
+    :git: https://github.com/jdg/MBProgressHUD.git
+
+CHECKOUT OPTIONS:
+  AFNetworking:
+    :commit: 1d241de0b4e3ce8b578902af2c6b08a8fa4cc507
+    :git: https://gitee.com/Leonesir/afnetworking-dh.git
+  MBProgressHUD:
+    :commit: 4a7c5f3e53cdea77c5dcb8578c2ee5acacdf6781
+    :git: https://github.com/jdg/MBProgressHUD.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 1e49f114ce59e7156e35761e03e1087f386689e2
+  CQDemoKit: 1fea1039a960befe72d4452ff17827e2828b9501
+  CQDemoKit-Swift: 28d06bf24cbcc84c9651e0ffe607bffdd57863b6
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 1b0fb447e80a0fda94808180750e8b78a07b3cd2
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+
+PODFILE CHECKSUM: 8aed6e4f934a68c83ece4f486f6d9575414f3281
+
+COCOAPODS: 1.16.2
