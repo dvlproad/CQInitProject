@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import Flutter
+import FlutterPluginRegistrant
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var window: UIWindow?
+    lazy var flutterEngine = FlutterEngine(name: "my_flutter_engine")
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        flutterEngine.run()
+        GeneratedPluginRegistrant.register(with: flutterEngine)
+        
         return true
     }
 

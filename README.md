@@ -73,7 +73,56 @@ flutter create --org com.dvlproad.cqinitproject .
 
 方法2：尝试先运行：`flutter build ios --no-codesign` 来生成 iOS 目录，再执行 pod install。
 
+4、在主工程（iOS代码中）使用Flutter模块，跳转到指定页面
 
+```swift
+import UIKit
+import Flutter
+import FlutterPluginRegistrant
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    lazy var flutterEngine = FlutterEngine(name: "my_flutter_engine")
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        flutterEngine.run()
+        GeneratedPluginRegistrant.register(with: flutterEngine)
+        
+        return true
+    }
+}    
+```
+
+在 iOS 代码中跳转到 Flutter 界面
+
+```swift
+import UIKit
+import Flutter
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        button.setTitle("打开Flutter页面", for: .normal)
+        button.backgroundColor = .red
+        button.addTarget(self, action: #selector(openFlutterPage), for: .touchUpInside)
+        view.addSubview(button)
+    }
+
+    
+    @IBAction func openFlutterPage() {
+        let flutterViewController = FlutterViewController(engine: (UIApplication.shared.delegate as! AppDelegate).flutterEngine, nibName: nil, bundle: nil)
+        flutterViewController.modalPresentationStyle = .fullScreen
+        present(flutterViewController, animated: true, completion: nil)
+    }
+}
+```
 
 
 
