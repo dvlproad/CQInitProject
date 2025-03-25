@@ -1,19 +1,7 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
-    - AFNetworking/NSURLSession
+  - connectivity_plus (0.0.1):
+    - Flutter
+    - ReachabilitySwift
   - CQDemoKit (0.8.0):
     - CQDemoKit/Auxiliary (= 0.8.0)
     - CQDemoKit/BaseUIKit (= 0.8.0)
@@ -71,59 +59,88 @@ PODS:
     - CQDemoKit/Demo_Resource
   - CQDemoKit/Helper (0.8.0)
   - CQDemoKit/Monitor (0.8.0)
-  - FBRetainCycleDetector (0.1.4)
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - connectivity_plus
+    - Flutter
+    - fluttertoast
+    - sqflite
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - FMDB (2.7.12):
+    - FMDB/standard (= 2.7.12)
+  - FMDB/Core (2.7.12)
+  - FMDB/standard (2.7.12):
+    - FMDB/Core
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MLeaksFinder (1.0.0):
-    - FBRetainCycleDetector
+  - ReachabilitySwift (5.2.4)
+  - sqflite (0.0.3):
+    - Flutter
+    - FMDB (>= 2.7.5)
   - SVProgressHUD (2.3.1):
     - SVProgressHUD/Core (= 2.3.1)
   - SVProgressHUD/Core (2.3.1)
+  - Toast (4.1.1)
 
 DEPENDENCIES:
-  - AFNetworking (from `https://gitee.com/Leonesir/afnetworking-dh.git`, branch `master`)
+  - connectivity_plus (from `../cqinitproject_flutter/.ios/.symlinks/plugins/connectivity_plus/ios`)
   - CQDemoKit-Swift (~> 0.0.1)
   - CQDemoKit/BaseVC (~> 0.8.0)
   - CQDemoKit/Demo_Resource (~> 0.8.0)
+  - Flutter (from `../cqinitproject_flutter/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../cqinitproject_flutter/.ios/Flutter/FlutterPluginRegistrant`)
+  - fluttertoast (from `../cqinitproject_flutter/.ios/.symlinks/plugins/fluttertoast/ios`)
   - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `4a7c5f3e53cdea77c5dcb8578c2ee5acacdf6781`)
-  - MLeaksFinder
+  - sqflite (from `../cqinitproject_flutter/.ios/.symlinks/plugins/sqflite/ios`)
   - SVProgressHUD (~> 2.3.1)
 
 SPEC REPOS:
   trunk:
     - CQDemoKit
     - CQDemoKit-Swift
-    - FBRetainCycleDetector
+    - FMDB
     - Masonry
-    - MLeaksFinder
+    - ReachabilitySwift
     - SVProgressHUD
+    - Toast
 
 EXTERNAL SOURCES:
-  AFNetworking:
-    :branch: master
-    :git: https://gitee.com/Leonesir/afnetworking-dh.git
+  connectivity_plus:
+    :path: "../cqinitproject_flutter/.ios/.symlinks/plugins/connectivity_plus/ios"
+  Flutter:
+    :path: "../cqinitproject_flutter/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "../cqinitproject_flutter/.ios/Flutter/FlutterPluginRegistrant"
+  fluttertoast:
+    :path: "../cqinitproject_flutter/.ios/.symlinks/plugins/fluttertoast/ios"
   MBProgressHUD:
     :commit: 4a7c5f3e53cdea77c5dcb8578c2ee5acacdf6781
     :git: https://github.com/jdg/MBProgressHUD.git
+  sqflite:
+    :path: "../cqinitproject_flutter/.ios/.symlinks/plugins/sqflite/ios"
 
 CHECKOUT OPTIONS:
-  AFNetworking:
-    :commit: 1d241de0b4e3ce8b578902af2c6b08a8fa4cc507
-    :git: https://gitee.com/Leonesir/afnetworking-dh.git
   MBProgressHUD:
     :commit: 4a7c5f3e53cdea77c5dcb8578c2ee5acacdf6781
     :git: https://github.com/jdg/MBProgressHUD.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 1e49f114ce59e7156e35761e03e1087f386689e2
+  connectivity_plus: 413a8857dd5d9f1c399a39130850d02fe0feaf7e
   CQDemoKit: 1fea1039a960befe72d4452ff17827e2828b9501
   CQDemoKit-Swift: 28d06bf24cbcc84c9651e0ffe607bffdd57863b6
-  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  FlutterPluginRegistrant: 4ef2f64b7734a2143dcec21944c626e64b534d5d
+  fluttertoast: 9f2f8e81bb5ce18facb9748d7855bf5a756fe3db
+  FMDB: 728731dd336af3936ce00f91d9d8495f5718a0e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1b0fb447e80a0fda94808180750e8b78a07b3cd2
-  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  ReachabilitySwift: 32793e867593cfc1177f5d16491e3a197d2fccda
+  sqflite: 31f7eba61e3074736dff8807a9b41581e4f7f15a
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
 
-PODFILE CHECKSUM: 8aed6e4f934a68c83ece4f486f6d9575414f3281
+PODFILE CHECKSUM: 958385faee82017a16a09782654418133b34fa81
 
 COCOAPODS: 1.16.2

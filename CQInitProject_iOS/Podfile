@@ -3,6 +3,10 @@ use_frameworks!
 inhibit_all_warnings!
 # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
 
+# flutter 模块
+flutter_application_path = '../cqinitproject_flutter'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
 
 post_install do |installer|
     
@@ -23,6 +27,9 @@ post_install do |installer|
             config.build_settings[deployment_target_key] = minimal_deployment_target
         end
     end
+    
+    # flutter
+    flutter_post_install(installer) if defined?(flutter_post_install)
 end
 
 #source 'https://github.com/CocoaPods/Specs.git'
@@ -45,11 +52,13 @@ target 'CQInitProject_iOS' do
   # 或直接使用 master 分支
   # pod 'MBProgressHUD', :git => 'https://github.com/jdg/MBProgressHUD.git', :branch => 'master'
   pod 'SVProgressHUD',          '~> 2.3.1'
-  pod 'AFNetworking', :git => 'https://gitee.com/Leonesir/afnetworking-dh.git', :branch => 'master'
+  #pod 'AFNetworking', :git => 'https://gitee.com/Leonesir/afnetworking-dh.git', :branch => 'master'
   
   pod 'CQDemoKit',              '~> 0.8.0',      :subspecs => ['BaseVC', 'Demo_Resource']
   pod 'CQDemoKit-Swift',        '~> 0.0.1'
   
-  pod 'MLeaksFinder',       :configurations => ['Debug']
+  #pod 'MLeaksFinder',       :configurations => ['Debug']
+  
+  install_all_flutter_pods(flutter_application_path)
 end
 

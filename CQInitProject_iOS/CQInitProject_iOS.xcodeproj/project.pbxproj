@@ -133,7 +133,6 @@
 				FD150F801DDC8A7D86B2AA3E /* Pods-CQInitProject_iOS.debug.xcconfig */,
 				E64401937C7EEFE0C7176FB4 /* Pods-CQInitProject_iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,10 +144,12 @@
 			buildConfigurationList = 97C0415E2D92DD3D00D96F8C /* Build configuration list for PBXNativeTarget "CQInitProject_iOS" */;
 			buildPhases = (
 				D2224F48E9D2E6C49523AA37 /* [CP] Check Pods Manifest.lock */,
+				1336B4696606D980A467643A /* [CP-User] Run Flutter Build cqinitproject_flutter Script */,
 				97C041312D92DD3B00D96F8C /* Sources */,
 				97C041322D92DD3B00D96F8C /* Frameworks */,
 				97C041332D92DD3B00D96F8C /* Resources */,
 				68F7446C4D036DD000EFF600 /* [CP] Embed Pods Frameworks */,
+				A94B68D2FB6FB7F52E8AE9EF /* [CP-User] Embed Flutter Build cqinitproject_flutter Script */,
 			);
 			buildRules = (
 			);
@@ -273,6 +274,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1336B4696606D980A467643A /* [CP-User] Run Flutter Build cqinitproject_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build cqinitproject_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../cqinitproject_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
 		68F7446C4D036DD000EFF600 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,6 +300,16 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CQInitProject_iOS/Pods-CQInitProject_iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A94B68D2FB6FB7F52E8AE9EF /* [CP-User] Embed Flutter Build cqinitproject_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build cqinitproject_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../cqinitproject_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
 		};
 		D2224F48E9D2E6C49523AA37 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -445,7 +466,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -508,7 +529,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
