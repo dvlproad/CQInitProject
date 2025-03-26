@@ -20,4 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "CQInitProject_Android"
-include ':app'
+include(":app")
+ 
