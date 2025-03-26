@@ -1,4 +1,8 @@
+# iOS
 Pods/
+
+# Android
+.idea/
 
 # 忽略 Xcode 用户数据目录
 xcuserdata/

@@ -12,7 +12,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
@@ -21,4 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "CQInitProject_Android"
 include(":app")
- 
+
+// Replace "cqinitproject_flutter" with whatever package_name you supplied when you ran:
+// `$ flutter create -t module [package_name]
+val filePath = settingsDir.parentFile.toString() + "/cqinitproject_flutter/.android/include_flutter.groovy"
+apply(from = File(filePath))

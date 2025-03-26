@@ -15,6 +15,27 @@
 
 
 
+
+
+## Android
+
+[《将 Flutter module 集成到 Android 项目》](https://docs.flutter.cn/add-to-app/android/project-setup)
+
+从 Kotlin 代码中调用 `include_flutter.groovy` 的功能需要 Flutter 3.27。你如果需要判断当前的 Flutter 版本，请运行 `flutter --version`。
+
+[Flutter SDK 归档列表](https://docs.flutter.cn/release/archive)
+
+```sh
+fvm --version
+fvm install 3.27.4
+fvm list
+fvm use 3.27.4  	# 该目录下的项目会使用指定版本的 Flutter
+fvm global 3.27.4	# 所有项目都会使用指定版本的 Flutter
+flutter --version
+```
+
+
+
 ## 构建 Flutter 模块
 
 2025.03.25：[官方文档：将 Flutter module 集成到 iOS 项目](https://docs.flutter.cn/add-to-app/ios/project-setup)
@@ -25,8 +46,9 @@
 
 1、创建 Flutter 模块 通过命令创建一个 Flutter 模块，而不是完整的 Flutter 应用，这个模块会作为 Android 或 iOS 项目的一部分，会在 模块中编写业务逻辑。
 
-```
+```shell
 flutter create --template module cqinitproject_flutter
+flutter create -t module --org com.dvlproad cqinitproject_flutter # 可避免后续 `flutter build ios` 未设置id问题
 ```
 
 2、在 `pubspec.yaml` 中添加依赖库
@@ -37,6 +59,10 @@ flutter create --template module cqinitproject_flutter
 ```
 
 执行 `flutter pub get`
+
+
+
+### iOS：将 Flutter module 作为依赖项
 
 3、**在 Podfile 中添加 Flutter 模块，并执行 pod install 安装 Flutter 相关依赖****
 
@@ -121,6 +147,42 @@ class ViewController: UIViewController {
         flutterViewController.modalPresentationStyle = .fullScreen
         present(flutterViewController, animated: true, completion: nil)
     }
+}
+```
+
+### Android：将 Flutter module 作为依赖项
+
+dev.flutter.flutter-gradle-plugin 需要在 **项目级**（project 级别）添加 maven 仓库
+
+所以需要
+
+```kotlin
+dependencyResolutionManagement {
+		# repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) // 会引起Flutter错误，需要修改
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+```
+
+使用 **依赖模块的源码** 的方式：
+
+```kotlin
+// MyApp/settings.gradle.kts
+rootProject.name = "CQInitProject_Android"
+include(":app")
+
+// Replace "cqinitproject_flutter" with whatever package_name you supplied when you ran:
+// `$ flutter create -t module [package_name]
+val filePath = settingsDir.parentFile.toString() + "/cqinitproject_flutter/.android/include_flutter.groovy"
+apply(from = File(filePath))
+
+
+// MyApp/app/build.gradle
+dependencies {
+    implementation(project(":flutter"))
 }
 ```
 
