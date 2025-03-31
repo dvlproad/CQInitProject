@@ -42,13 +42,15 @@ flutter --version
 
 之前旧的集成方式（已不适用）：[《iOS项目集成Flutter.md》](https://dvlproad.github.io/Flutter/2%E9%9B%86%E6%88%90/iOS%E9%A1%B9%E7%9B%AE%E9%9B%86%E6%88%90Flutter/)
 
-
+本Flutter模块是在 flutter 3.27.4 的版本创建的。
 
 1、创建 Flutter 模块 通过命令创建一个 Flutter 模块，而不是完整的 Flutter 应用，这个模块会作为 Android 或 iOS 项目的一部分，会在 模块中编写业务逻辑。
 
 ```shell
 flutter create --template module cqinitproject_flutter
 flutter create -t module --org com.dvlproad cqinitproject_flutter # 可避免后续 `flutter build ios` 未设置id问题
+
+# flutter create --org com.dvlproad cqinitproject_flutter_app # 只是建项目，而不是模块
 ```
 
 2、在 `pubspec.yaml` 中添加依赖库
@@ -185,6 +187,45 @@ dependencies {
     implementation(project(":flutter"))
 }
 ```
+
+2、同步 Gradle 
+
+方式1：执行 `Sync Project With Gradle Files` ，其会在Android工程中看到 新生成的 flutter.gradle 文件。
+
+方式2：`./gradlew clean`  `./gradlew sync`
+
+有时候会提示要使用指定的 java 版本。切换java版本的方法如下：
+
+`open ~/.zshrc`
+
+```ruby
+#添加下面的代码
+export JAVA_8_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_17_HOME="$(/usr/libexec/java_home -v 17)"
+export JAVA_11_HOME=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
+alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
+alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+alias jdk17='export JAVA_HOME=$JAVA_17_HOME'
+export JAVA_HOME=$JAVA_8_HOME
+```
+
+之后即可在终端直接使用
+
+`jdk8` 或者 `jdk11` 等来切换java版本（`java -version`）了
+
+
+
+## 创建Flutter项目
+
+```ruby
+flutter create --org com.dvlproad cqinitproject_flutter_app
+```
+
+
+
+
+
+
 
 
 

@@ -74,6 +74,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(project(":flutter")) // 确保 Flutter 模块存在
+    implementation(project(":flutter")) // 确保 Flutter 模块存在 。这里 :flutter 其实是 cqinitproject_flutter 的别名，include_flutter.groovy 会自动处理这个映射。
 
 }
